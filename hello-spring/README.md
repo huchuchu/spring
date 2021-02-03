@@ -75,3 +75,50 @@
    자나는 JUnit이라는 프레임워크로 테스트를 실행하여 이러한 문제점을 해결한다. 
    
    
+   ## 21/02/03
+   ### 스프링 빈과 의존관계
+   회원관리(가입/로그인등)시 컨트롤러에서 모두 처리하는게 아니라 repository와 service를 통해서 하게되는데 이것을 의존관계라고한다
+   ** controller에서 요청을받아 service에서 비즈니스로직처리 repository에서 저장하는게 일반적인 패턴
+   controller --> Service --> Repository 로직을 위해선 이 세개를 연결해줘야하는데 그 때 사용되는게 ** @Autowired **
+
+   ```
+   @Controller
+public class MemberController {
+
+    private final MemberService memberService;
+
+    @Autowired
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
+}
+   
+   ```
+   
+  생성자에 @Autowired를 붙이면 컨롤러가 생성이될 때 스프링에 들어있는 service객체를 딱 넣어줌! 이게 바로 ** dependency injection **
+  의존관계를 주입!!
+  
+  * 스프링 빈을 등록방법
+    + 컴포넌트 스캔과 자동의존관계 설정
+      - @Component 에노테이션이 있으면 스프링 빈으로 자동 등록된다
+      - @Controller 컨트롤러가 스프링 빈으로 자동 등록된 이유도 컴포넌트 스캔때문이다
+      - @Conponent 를 포함하는 다음 애노테이션도 스프링 빈으로 자동 등록된다
+        ++ @controller , @Service , @Repository
+  
+  * 스프링은 스프링컨테이너에 스프링 빈을 등록할 때 기본적으로 싱글톤으로등록한다(유일하게 하나만 등록해서 공유) 따라서 같은 스프링 빈이면 모두 같은 인스턴스다. 
+    설정으로 싱글톤이 아니게 할 수 있지만 특별한 경우를 제외하면 대부분 싱클톤이다
+        
+    + 자바 코드로 직접 스프링 빈 등록하기
+      - SpringConfig파일 작성하기
+  
+  * DI 종류 : ** 생성자 주입**, 필드주입, setter주입. 의존관계가 실행중에 동적으로 변하는 경우는 거의 없으므로 생성자 주입을 권장한다
+  * 정형화된 코드는 통 컴포넌트 스캔을 사용. 정형화 되지 않거나 상황에 따라 구현 클레스를 변경해야 하면 설정을 통해 스프링빈으로 등록한다
+  * @Autowired를 통한 DI는 스프링이 관리하는 객체에서만 동작한다. 스프링 빈으로 등록하지않고내가 직접 생성한 객체에서는 동작안한다
+  
+  
+    
+    
+    
+      
+  
+   
