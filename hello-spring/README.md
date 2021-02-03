@@ -79,7 +79,7 @@
    ### 스프링 빈과 의존관계
    회원관리(가입/로그인등)시 컨트롤러에서 모두 처리하는게 아니라 repository와 service를 통해서 하게되는데 이것을 의존관계라고한다
    ** controller에서 요청을받아 service에서 비즈니스로직처리 repository에서 저장하는게 일반적인 패턴
-   controller --> Service --> Repository 로직을 위해선 이 세개를 연결해줘야하는데 그 때 사용되는게 ** @Autowired **
+   controller --> Service --> Repository 로직을 위해선 이 세개를 연결해줘야하는데 그 때 사용되는게 __@Autowired__
 
    ```
    @Controller
@@ -95,7 +95,7 @@ public class MemberController {
    
    ```
    
-  생성자에 @Autowired를 붙이면 컨롤러가 생성이될 때 스프링에 들어있는 service객체를 딱 넣어줌! 이게 바로 ** dependency injection **
+  생성자에 @Autowired를 붙이면 컨롤러가 생성이될 때 스프링에 들어있는 service객체를 딱 넣어줌! 이게 바로 __dependency injection__
   의존관계를 주입!!
   
   * 스프링 빈을 등록방법
