@@ -4,6 +4,7 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,7 @@ public class MemberService {
      */
     public Long join(Member member){
 
+
 //        같은 이름이 있는 중복회원은 안됨
 //        ctrl + alt + v
 //        optional 때문에 ifPresent메서드 사용이 가능하다
@@ -54,9 +56,13 @@ public class MemberService {
 //                    throw new IllegalStateException("이미 존재하는 회원입니다");
 //                });
 
+
+
+
 //        << 3 >>
         validateDuplicateMember(member); // 중복회원검증
         memberRepository.save(member);
+
 
         return member.getId();
    }
