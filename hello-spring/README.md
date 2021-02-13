@@ -161,5 +161,15 @@
     - 인터페이스를 통한 기본적인 CRUD
     - `findByName()`, `findByEmail()`처럼 메서드만으로 조회 기능 제공
     - 페이징 기능 자동 제공
-  
+    
+    ## 2021/02/13
+    ### AOP (Aspect Oriented Progremming 관점지향 프로그래밍)
+    * 공통 관심 사항(cross-cotting-concern) vs 핵심 관심 사항(core concern) 분리
+    * 핵심 관심사항을 깔끔하게 유지할 수있다 (유지보수에 용이)
+    * 변경이 필요하면 이 로직(공통관심사항)만 변경하면 된다
+    * 원하는 대상만 선택하여 적용할 수 있다.
+    
+      
+    
    
+    
