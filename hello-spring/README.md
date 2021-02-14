@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # spring basic
 ##### 출처 : 스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술 강의
+=======
+## `스프링입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술`로 학습 한 내용
+
+>>>>>>> cae3e8d048d501a40581dbdbf3894524d98bdf34
 ## 2021/01/31 
 ### 프로젝트 환경설정
 &#35; JAVA 11
@@ -136,9 +141,9 @@
    &#42; 스프링 solid 추가로 알아보기 
    
    
-    - repository 클래스를 MemoryMemberRepository에서 JdbcMemberRepository로 변경했다
-      + 개방-폐쇄원칙(OCP, Open-Closed Principle) : 확장에는 열려있고 수정,변경에는 닫혀있다
-      + 스프링의 DI을 사용하면 __기존 코드를 전혀 손대지 않고, 설정만으로 구현 클래스를 변경__ 할 수 있다
+   - repository 클래스를 MemoryMemberRepository에서 JdbcMemberRepository로 변경했다
+     + 개방-폐쇄원칙(OCP, Open-Closed Principle) : 확장에는 열려있고 수정,변경에는 닫혀있다
+     + 스프링의 DI을 사용하면 __기존 코드를 전혀 손대지 않고, 설정만으로 구현 클래스를 변경__ 할 수 있다
    
    * 통합테스트
    @SpringBootTest : 스프링 컨테이너와 테스트를 함께 실행한다
